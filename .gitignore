@@ -1,3 +1,8 @@
+env/
+Hengly-ANA680-Hw-Wk2-Midterm-Copy1.ipynb
+Hengly-ANA680-Hw-Wk2-Midterm.ipynb
+.ipynb_checkpoints
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

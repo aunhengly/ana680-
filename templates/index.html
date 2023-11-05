@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Performance</title>
+  </head>
+  <body>
+    <h1>Student Performance By Race/Ethnicity:</h1>
+    <form action="{{ url_for('predict')}}" method="POST">
+      math_score:
+      <input type="number" name="math_score" />
+      <br />
+
+      reading_score:
+      <input type="number" name="reading_score" />
+      <br />
+
+      writing_score: <input type="number" name="writing_score" />
+      <br />
+
+      <input type="submit" value="Submit" />
+    </form>
+    My Prediction: {{predict}}
+    <br />
+    <br />
+    <label>Result from Prediction:</label><br />
+    <label>Group A= 0 </label><br />
+    <label>Group B= 1 </label><br />
+    <label>Group C= 2 </label><br />
+    <label>Group D= 3 </label><br />
+    <label>Group E= 4 </label><br />
+  </body>
+</html>
