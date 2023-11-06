@@ -1,6 +1,6 @@
 Flask
 pytest
-
+gunicorn
 # blinker==1.6.3
 # click==8.1.7
 # exceptiongroup==1.1.3
