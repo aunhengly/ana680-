@@ -50,7 +50,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && job.status == 'success'
         run: |
           # Configure Heroku with the API key
-          echo $heroku_api_key | heroku auth:login --interactive
+          heroku auth:login
           # Add the Heroku remote
           heroku git:remote -a $heroku_app_name
           # Push your code to Heroku
