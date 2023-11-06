@@ -41,7 +41,7 @@ jobs:
         env:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           # heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
-        if: github.ref == 'refs/heads/main' && job.status == 'success'
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
           git remote add heroku https://git.heroku.com/student-pred-performance.git
           git push heroku HEAD:main -f
