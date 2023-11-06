@@ -39,7 +39,7 @@ jobs:
 
       - name: Deploy to Heroku
         env:
-          heroku_api_key: ${{secrets.STUDENT_HEROKU_TOKEN}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           # heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
         if: github.ref == 'refs/heads/main' && job.status == 'success'
         run: |
