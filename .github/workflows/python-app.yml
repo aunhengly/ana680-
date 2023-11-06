@@ -49,8 +49,8 @@ jobs:
           heroku_app_name: "student-pred-performance" # Replace with your Heroku app's name
         if: github.ref == 'refs/heads/main' && job.status == 'success'
         run: |
-          # Log in to Heroku using the API key
-          echo $heroku_api_key | heroku login -i
+          # Configure Heroku with the API key
+          echo $heroku_api_key | heroku auth:login --interactive
           # Add the Heroku remote
           heroku git:remote -a $heroku_app_name
           # Push your code to Heroku
