@@ -39,11 +39,19 @@ jobs:
       #     export
       #     pytest
 
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+
       - name: Deploy to Heroku
         env:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          # heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
+          heroku_app_name: "student-pred-performance" # Replace with your Heroku app's name
         if: github.ref == 'refs/heads/main' && job.status == 'success'
         run: |
-          git remote add heroku https://git.heroku.com/student-pred-performance.git
+          # Log in to Heroku using the API key
+          echo $heroku_api_key | heroku login -i
+          # Add the Heroku remote
+          heroku git:remote -a $heroku_app_name
+          # Push your code to Heroku
           git push heroku HEAD:main -f
